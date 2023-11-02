@@ -25,6 +25,9 @@ public class FirstFragment extends Fragment {
 
     PageViewModel pageViewModel;
 
+    public static FirstFragment newInstance(){
+        return new FirstFragment();
+    }
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,12 +51,12 @@ public class FirstFragment extends Fragment {
         editText.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                
+
             }
 
             @Override
             public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                pageViewModel.setName(s.toString());
             }
 
             @Override
